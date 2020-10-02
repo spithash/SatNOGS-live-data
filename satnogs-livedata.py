@@ -11,6 +11,10 @@ pd.set_option('display.width', None)
 pd.set_option('display.max_colwidth', None)
 
 df = pd.read_json(url)
+# All available fields/columns to display options are: 
+# 'uuid' 'description' 'alive' 'type' 'uplink_low' 'uplink_high' 'uplink_drift' 
+# 'downlink_low' 'downlink_high' 'downlink_drift' 'mode' 'mode_id' 'uplink_mode' 'invert' 'baud' 
+# 'norad_cat_id' 'status' 'updated' 'citation' 'service' 'coordination' 'coordination_url'
 selection = ['uuid', 'description', 'status', 'alive', 'type', 'uplink_low', 'uplink_high', 'updated']
 df = df[selection]
 data = df.head(3000)
