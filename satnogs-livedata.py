@@ -1,9 +1,18 @@
+#!/usr/bin/env python3
+
 import pandas as pd
 import re
 import sys
+import configparser
 
-# Replace "YOUR_API_KEY_GOES_HERE" with your api key
-url = 'https://db.satnogs.org/api/transmitters/?api_key=YOUR_API_KEY_GOES_HERE&format=json'
+
+# Process commandline options and parse configuration
+cfg = configparser.ConfigParser(inline_comment_prefixes=('#', ';'))
+cfg.read('configuration.ini')
+
+SATNOGS_DB_API_KEY = cfg.get('Credentials', 'SATNOGS_DB_API_KEY')
+
+url = 'https://db.satnogs.org/api/transmitters/?api_key={}&format=json'.format(SATNOGS_DB_API_KEY)
 
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
@@ -37,6 +46,6 @@ print("")
 active = df.status.str.count("active").sum()
 inactive = df.status.str.count("inactive").sum()
 invalid = df.status.str.count("invalid").sum()
-print("\033[0;32mNumber of online SatNOGS: \033[0m", active)
-print("\033[0;31mNumber of offline SatNOGS: \033[0m", inactive)
+print("\033[0;32mNumber of active SatNOGS: \033[0m", active)
+print("\033[0;31mNumber of inactive SatNOGS: \033[0m", inactive)
 print("\033[0;33mNumber of invalid SatNOGS: \033[0m", invalid)
