@@ -29,19 +29,27 @@ while True:
     df = df[selection]
     data = df.head(3000)
 
+
     def colorize(text):
         return re.sub('.*inactive.*|.*invalid.*', lambda m: '\x1b[0;31m{}\x1b[0m'.format(m.group()), text)
+
+
     class MyStdout(object):
         def __init__(self, term=sys.stdout):
             self.term = term
+
         def write(self, text):
             text = colorize(text)
             self.term.write(text)
+
         def flush(self):
             pass
 
+
     sys.stdout = MyStdout()
+
     from pandas_streaming.df import StreamingDataFrame
+
     sdf = StreamingDataFrame.read_df(data)
 
     for data in sdf:
