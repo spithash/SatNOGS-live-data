@@ -14,4 +14,4 @@ Just rename or copy configuration.ini-dist to configuration.ini and replace 'YOU
 * re
 
 ## Gitlab
-You may also fint it here: https://gitlab.com/spithash/SatNOGS-live-data
+You may also find it here: https://gitlab.com/spithash/SatNOGS-live-data
