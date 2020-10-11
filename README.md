@@ -9,6 +9,7 @@ Just rename or copy configuration.ini-dist to configuration.ini and replace 'YOU
 * pandas
 * pandas_streaming
 * configparser
+* sklearn
 * time
 * sys
 * re
