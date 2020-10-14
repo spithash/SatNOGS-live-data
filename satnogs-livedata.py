@@ -8,7 +8,7 @@ import time
 import signal
 
 
-def signal_handler():
+def signal_handler(signal, frame):
     sys.exit(0)
 
 
