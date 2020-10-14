@@ -5,6 +5,14 @@ import re
 import sys
 import configparser
 import time
+import signal
+
+
+def signal_handler():
+    sys.exit(0)
+
+
+signal.signal(signal.SIGINT, signal_handler)
 
 while True:
     # Process commandline options and parse configuration
