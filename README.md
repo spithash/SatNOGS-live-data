@@ -13,6 +13,7 @@ Just rename or copy configuration.ini-dist to configuration.ini and replace 'YOU
 * time
 * sys
 * re
+* signal
 
 ## Gitlab
 You may also find it here: https://gitlab.com/spithash/SatNOGS-live-data
