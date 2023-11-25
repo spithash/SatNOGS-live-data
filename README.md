@@ -16,4 +16,4 @@ Just rename or copy configuration.ini-dist to configuration.ini and replace 'YOU
 * signal
 
 ## Gitlab
-You may also find it here: https://gitlab.com/spithash/SatNOGS-live-data
+There's also a GUI version here: https://gitlab.com/spithash/satnogs-live-data-gui
